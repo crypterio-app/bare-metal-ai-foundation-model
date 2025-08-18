@@ -17,17 +17,25 @@ module "metallb" {
   depends_on = [kind_cluster.default]
   kind_cluster_config_path = var.kind_cluster_config_path
 }
+
 module "nginx" {
   source = "./modules/nginx"
   depends_on = [module.metallb]
 }
+
 module "argo" {
   source = "./modules/argo"
   depends_on = [module.nginx]
 }
+
+module "weaviate" {
+  source = "./modules/weaviate"
+  depends_on = [module.argo]
+}
+
 module "llm" {
   source = "./modules/llm"
-  depends_on = [module.nginx]
+  depends_on = [module.argo]
 }
 
 
