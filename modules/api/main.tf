@@ -6,12 +6,17 @@ resource "helm_release" "apisix" {
 
   repository = "https://charts.apiseven.com"
   chart      = "apisix"
-  version    = "2.16.0"  # pick the version you want
+  version    = "2.11.5"  # pick the version you want
 
   # Example configuration via values
   set {
     name  = "service.type"
-    value = "ClusterIP"
+    value = "LoadBalancer"
+  }
+
+  set {
+    name  = "gateway.externalTrafficPolicy"
+    value = "Cluster"
   }
 
   set {
