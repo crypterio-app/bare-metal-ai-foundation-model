@@ -1,4 +1,3 @@
-
 resource "helm_release" "anythingllm" {
   name             = "anythingllm"
   repository       = "https://la-cc.github.io/anything-llm-helm-chart"
@@ -14,6 +13,22 @@ resource "helm_release" "anythingllm" {
   set {
     name  = "config.VECTOR_DB"
     value = "chroma"
+  }
+
+  # 👇 Add Ollama provider config
+  set {
+    name  = "config.LLM_PROVIDER"
+    value = "ollama"
+  }
+
+  set {
+    name  = "config.OLLAMA_BASE_URL"
+    value = "http://ollama.anythingllm.svc.cluster.local:11434"
+  }
+
+  set {
+    name  = "config.MODEL"
+    value = "llama3"
   }
 
   set {
