@@ -33,9 +33,14 @@ module "weaviate" {
   depends_on = [module.argo]
 }
 
+module "olama" {
+  source = "./modules/olama"
+  depends_on = [module.weaviate]
+}
+
 module "llm" {
   source = "./modules/llm"
-  depends_on = [module.argo]
+  depends_on = [module.weaviate]
 }
 
 
