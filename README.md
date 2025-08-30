@@ -1,4 +1,5 @@
 <img width="1503" height="1218" alt="image" src="https://github.com/user-attachments/assets/6a50e554-028e-45ef-b336-7e9273c48fe2" />
+<img width="1137" height="637" alt="480718178-a82bb4dc-c3a0-4aca-8558-5161932de20d" src="https://github.com/user-attachments/assets/300c25eb-2b14-4885-8296-4ab781243a3e" />
 
 ## Bare Metal AI-Foundation-Model | 🚀🚀🚀 
 Unleash the power of AI Inference anywhere. AI foundation models are large, pre-trained AI models that are designed to be versatile and adaptable, capable of performing a wide range of tasks on specific data source. It supports a broad range of hardware platforms, including multi cloud providers , ensuring flexibility and scalability to meet diverse enterprise needs.
@@ -15,8 +16,6 @@ Unleash the power of AI Inference anywhere. AI foundation models are large, pre-
 
 
 🎯 Features 
-<img width="1137" height="637" alt="480718178-a82bb4dc-c3a0-4aca-8558-5161932de20d" src="https://github.com/user-attachments/assets/cf7229c9-88ee-4d7a-aa3d-df278fe016c7" />
-
 ```
 ✅ Kubernetes
 ✅ Gaudi Base Operator
