@@ -43,3 +43,4 @@ resource "helm_release" "keycloak" {
     value = "SuperSecurePassword123!"
   }
 }
+
