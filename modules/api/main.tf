@@ -39,3 +39,4 @@ resource "helm_release" "apisix" {
     value = "SuperSecurePassword123!"
   }
 }
+
