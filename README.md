@@ -18,7 +18,9 @@ Unleash the power of AI Inference anywhere. AI foundation models are large, pre-
 ```
 ✅ Kubernetes
 ✅ Gaudi Base Operator
-✅ NGINX Controller & APISIX 
+✅ Apisix
+✅ Keycloak
+✅ LLM Models
 ```
 
 🔨 Example :
