@@ -1,5 +1,4 @@
 
-
 output "kind_cluster_name" {
   description = "The name of the Kind cluster"
   value       = kind_cluster.default.name
