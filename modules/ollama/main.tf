@@ -6,6 +6,10 @@ resource "helm_release" "ollama" {
   namespace        = "anythingllm"
   create_namespace = true
 
+  atomic           = false   # prevents automatic rollback on timeout
+  cleanup_on_fail  = true
+  timeout          = 900     # 15 min, Airflow may take long to deploy
+
   set {
     name  = "service.type"
     value = "ClusterIP"
