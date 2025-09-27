@@ -34,6 +34,11 @@ module "minio" {
   depends_on = [module.argo]
 }
 
+module "postgresql" {
+  source = "./modules/postgresql"
+  depends_on = [module.minio]
+}
+
 module "weaviate" {
   source = "./modules/weaviate"
   depends_on = [module.minio]
