@@ -5,8 +5,11 @@ resource "helm_release" "postgresql_ha" {
   repository = "https://charts.bitnami.com/bitnami"
   chart      = "postgresql-ha"
   version    = "15.0.0" # check latest stable version
-
   create_namespace = true
+
+  atomic           = false   # prevents automatic rollback on timeout
+  cleanup_on_fail  = true
+  timeout          = 600     # 10 min, Postgres may take long to deploy
 
   values = [
     yamlencode({
