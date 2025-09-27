@@ -1,4 +1,5 @@
 
+
 data "external" "subnet" {
   program = ["/bin/bash", "-c", "docker network inspect -f '{{json .IPAM.Config}}' kind | jq .[0]"]
   depends_on = [
@@ -28,9 +29,14 @@ module "argo" {
   depends_on = [module.nginx]
 }
 
+module "minio" {
+  source = "./modules/minio"
+  depends_on = [module.argo]
+}
+
 module "weaviate" {
   source = "./modules/weaviate"
-  depends_on = [module.argo]
+  depends_on = [module.minio]
 }
 
 module "ollama" {
