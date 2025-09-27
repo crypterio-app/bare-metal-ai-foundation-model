@@ -7,7 +7,10 @@ resource "helm_release" "weaviate" {
   repository       = "https://weaviate.github.io/weaviate-helm"
   chart            = "weaviate"
   version          = "17.5.1"  # latest available chart version
-  timeout          = 600
+
+  atomic           = false   # prevents automatic rollback on timeout
+  cleanup_on_fail  = true
+  timeout          = 600     # 10 min, Weaviate may take long to deploy
 
   # Service types
   set {
