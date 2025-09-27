@@ -4,7 +4,7 @@ resource "helm_release" "ollama" {
   repository       = "https://otwld.github.io/ollama-helm/"
   chart            = "ollama"
   namespace        = "anythingllm"
-  create_namespace = false
+  create_namespace = true
 
   set {
     name  = "service.type"
