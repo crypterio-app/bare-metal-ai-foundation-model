@@ -29,4 +29,16 @@ resource "helm_release" "ollama" {
     name  = "resources.requests.memory"
     value = "4Gi"
   }
+
+  # Add the model you want to deploy
+  set {
+    name  = "models[0].name"
+    value = "llama2"       # must match the actual model name in Ollama
+  }
+
+  # Optional: specify model version or variant
+  set {
+    name  = "models[0].version"
+    value = "13b"          # e.g., "13b" or "7b"
+  }
 }
